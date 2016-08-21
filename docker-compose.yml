@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  notebook:
+    image: jupyter/notebook:4.2.0
+    volumes:
+      - ./:/notebooks:rw
+    ports:
+      - 8888:8888
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
